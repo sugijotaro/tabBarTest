@@ -8,13 +8,25 @@
 
 import UIKit
 
-class ViewController: UIViewController {
+class ViewController: UIViewController, UITabBarDelegate {
+    
+    @IBOutlet var tabBar : UITabBar!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tabBar.delegate = self
     }
-
-
+    
+    func tabBar(_ tabBar: UITabBar, didSelect item: UITabBarItem){
+        switch item.tag {
+        case 1:
+            print("1")
+        case 2:
+            print("2")
+        default:
+            return
+        }
+    }
 }
 
